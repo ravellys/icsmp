@@ -12,6 +12,9 @@ codecov = "*"
 [packages]
 django = "*"
 gunicorn = "*"
+python-decouple = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.8"
