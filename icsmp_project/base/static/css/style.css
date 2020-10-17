@@ -16,13 +16,12 @@ body {
     height: 75px;
 }
 
-.icsmp-navbar{
-    display: flex;
-    border-radius: 12%;
-    color: lightblue;
-    width: 6%;
-    justify-content: center;
-    background: #282a36;
-    padding-left: 1%;
-    font-family: "Helvetica Neue";
+.img-icsmp-navbar{
+    position: center;
+    width: 12px;
+    height: 12px;
+    display: inline-flex;
+    border-radius: 51%;
+    color: whitesmoke;
+
 }

@@ -20,6 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('icsmp_project.base.urls')),
+    path('', include('icsmp_project.aulas.urls')),
 ]
 
 if settings.DEBUG:

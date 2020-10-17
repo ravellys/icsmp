@@ -23,9 +23,10 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-bar-bg">
-      <div class="icsmp-navbar">
-      <a class="navbar-brand" href="{% url 'base:home' %}">ICSMP</a>
-      </div>
+      <a class="navbar-brand pl-2 m-0" href="{% url 'base:home' %}">
+        <img class="w-25 pr-lg-2 float-left" src="{% static 'images/icsmp.PNG' %}">
+        <h3 class="align-content-center">ICSMP</h3>
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
