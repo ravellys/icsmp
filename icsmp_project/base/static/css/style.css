@@ -1,0 +1,27 @@
+.main-footer{
+    background-color: #282a36;
+}
+
+.rights{
+    background-color: #282a36;
+}
+
+body {
+    background-color: #44475a;
+}
+
+.nav-bar-bg{
+    background-color: #282a36;
+    color: #f8f8f2;
+    height: 75px;
+}
+
+.img-icsmp-navbar{
+    position: center;
+    width: 12px;
+    height: 12px;
+    display: inline-flex;
+    border-radius: 51%;
+    color: whitesmoke;
+
+}

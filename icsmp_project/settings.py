@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'collectfast',
     'django.contrib.staticfiles',
     'icsmp_project.base',
+    'icsmp_project.aulas',
 ]
 
 MIDDLEWARE = [
