@@ -16,8 +16,12 @@ def test_status_code(resp):
 
 
 def test_title(resp):
-    assert_contains(resp, '<title>ICSMP</title>')
+    assert_contains(resp, '<title>ICSMP - Home</title>')
 
 
 def test_title_link(resp):
     assert_contains(resp, f'href="{reverse("base:home")}">')
+
+
+def test_footer_link(resp):
+    assert_contains(resp, "mailto:lucas.ravellys@ufpe.br")
