@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Aulas{% endblock title %}
+
+{% block body %}
+ <div class="container">
+          <div class="row">
+              <div class="col">
+                  <h1 class="text-white">Lista de videos</h1>
+                  <ol>
+                      {% for v in videos %}
+                      <li class="text-white"><a href="{{ v.get_absolute_url }}">{{ v.titulo }}</a></li>
+                      {% empty %}
+                      <li class="display-1 text-white">Faltando</li>
+                      {% endfor %}
+                  </ol>
+              </div>
+          </div>
+ </div>
+{% endblock %}
