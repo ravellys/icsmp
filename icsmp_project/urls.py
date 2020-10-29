@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('icsmp_project.base.urls')),
     path('aulas/', include('icsmp_project.aulas.urls')),
+    path('modulos_aulas/', include('icsmp_project.modulos_aulas.urls')),
 ]
 
 if settings.DEBUG:

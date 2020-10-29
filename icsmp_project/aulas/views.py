@@ -1,31 +1,15 @@
-from django.shortcuts import render
-from django.urls import reverse
+from django.shortcuts import render, get_object_or_404
 
-
-class Video:
-    def __init__(self, slug, titulo, v_id):
-        self.slug = slug
-        self.titulo = titulo
-        self.v_id = v_id
-
-    def get_absolute_url(self):
-        return reverse("aulas:video", args=(self.slug, ))
-
-
-videos = [
-    Video("video-01", "video 01", "xT9MWktQs2k"),
-    Video("video-02", "video 02", "6oEsG5miMsA"),
-]
-
-videos_dct = {dct.slug: dct for dct in videos}
+from icsmp_project.aulas.models import Video
 
 
 def indice(request):
+    videos = Video.objects.order_by('creation').all()
     return render(request, 'aulas/indice.html', context={"videos": videos})
 
 
 def video(request, slug):
-    video_ = videos_dct[slug]
+    video_ = get_object_or_404(Video, slug=slug)
     return render(request, 'aulas/video.html', context={"video": video_})
 
 

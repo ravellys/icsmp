@@ -6,7 +6,7 @@ from icsmp_project.django_assertions import assert_contains
 
 
 @pytest.fixture
-def resp(client: Client):
+def resp(client: Client, db):
     resp = client.get(reverse('base:home'))
     return resp
 
@@ -21,7 +21,3 @@ def test_title(resp):
 
 def test_title_link(resp):
     assert_contains(resp, f'href="{reverse("base:home")}">')
-
-
-def test_footer_link(resp):
-    assert_contains(resp, "mailto:lucas.ravellys@ufpe.br")

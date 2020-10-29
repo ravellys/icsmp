@@ -24,7 +24,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-bar-bg">
       <a class="navbar-brand pl-2 m-0" href="{% url 'base:home' %}">
-        <img class="w-25 pr-lg-2 float-left" src="{% static 'images/icsmp.PNG' %}">
+        <img class="w-25 pr-lg-2 float-left custom-radio" src="{% static 'images/icsmp.PNG' %}">
         <h3 class="align-content-center">ICSMP</h3>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
       {% block navbar %}{% endblock %}
 
 
-    </nav>
+   </nav>
 
     {% block body %}{% endblock %}
     {% include 'base/footer.html' with contato_email='lucas.ravellys@ufpe.br' only %}

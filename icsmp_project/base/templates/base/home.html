@@ -21,14 +21,15 @@
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              Modulos
             </a>
+
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+                {% for modulo in MODULOS %}
+                <a class="dropdown-item" href="{{ modulo.get_absolute_url }}">{{ modulo.nome }}</a>
+                {% endfor %}
             </div>
+
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -44,7 +45,7 @@
 {% block body %}
  <div class="container-fluid">
 	<div class="row d-flex justify-content-center">
-		<div class="col-md-9 ">
+		<div class="col-md-9">
 
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
