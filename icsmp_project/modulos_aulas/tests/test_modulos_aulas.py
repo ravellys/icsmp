@@ -10,6 +10,7 @@ from icsmp_project.modulos_aulas.models import ModuloAula
 def modulos(db):
     return mommy.make(ModuloAula, 3)
 
+
 @pytest.fixture
 def resp(client, modulos):
     return client.get(reverse('base:home'))

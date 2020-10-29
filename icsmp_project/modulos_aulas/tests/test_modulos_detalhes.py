@@ -10,6 +10,7 @@ from icsmp_project.modulos_aulas.models import ModuloAula
 def modulo(db):
     return mommy.make(ModuloAula)
 
+
 @pytest.fixture
 def resp(client, modulo):
     return client.get(reverse('modulos_aulas:detalhe', kwargs={'slug': modulo.slug}))
