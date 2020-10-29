@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  database:
+    container_name: icsmp_database
+    image: postgres
+    restart: always
+    volumes:
+      - ./.pgdata:/var/lib/postgresql/data
+    environment:
+      - LC_ALL=C.UTF-8
+      - POSTGRES_PASSWORD=icsmp
+      - POSTGRES_USER=icsmp
+    ports:
+      - 5433:5432

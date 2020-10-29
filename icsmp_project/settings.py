@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'icsmp_project.base',
     'icsmp_project.aulas',
+    'icsmp_project.modulos_aulas',
+    'ordered_model',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'icsmp_project.modulos_aulas.context_processors.listar_modulos_ordenados',
             ],
         },
     },
