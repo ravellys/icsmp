@@ -7,3 +7,7 @@ def list_modulos_ordenados():
 
 def encontrar_modulo(slug):
     return ModuloAula.objects.get(slug=slug)
+
+
+def listar_aulas(modulo: ModuloAula):
+    return list(modulo.aula_set.order_by('order').all())

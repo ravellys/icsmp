@@ -129,4 +129,6 @@ dmypy.json
 .pyre/
 /staticfiles/
 
+#postgres files
 .pgdata
+/.pgdata/
