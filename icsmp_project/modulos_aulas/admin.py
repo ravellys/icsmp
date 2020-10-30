@@ -11,6 +11,7 @@ class ModuloAdmin(OrderedModelAdmin):
     list_display = ('nome', 'descricao', 'move_up_down_links')
     prepopulated_fields = {'slug': ('nome', )}
 
+
 @admin.register(Aula)
 class AulaAdmin(OrderedModelAdmin):
     list_display = ('nome', 'descricao', 'move_up_down_links')
