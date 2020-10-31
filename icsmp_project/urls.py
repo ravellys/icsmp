@@ -23,6 +23,7 @@ urlpatterns = [
     path('aulas/', include('icsmp_project.aulas.urls')),
     path('modulos_aulas/', include('icsmp_project.modulos_aulas.urls')),
     path('modulos_artigos/', include('icsmp_project.modulos_artigos.urls')),
+    path('img3d/', include('icsmp_project.img3d.urls')),
 ]
 
 if settings.DEBUG:

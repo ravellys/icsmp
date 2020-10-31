@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Modulo Aulas{% endblock title %}
+
+{% block body %}
+ <div class="container">
+          <div class="col text-light">
+            <h3> Banco de Imagens </h3>
+              <div class="row">
+                <ol>
+                 {% for img in img3d %}
+                     <li><a href="{{ img.arquivo.path }}">
+                         {{ img.nome }}
+                        </a>
+                     </li>
+                 {% endfor %}
+                </ol>
+              </div>
+          </div>
+ </div>
+{% endblock %}

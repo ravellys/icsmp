@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'icsmp_project.aulas',
     'icsmp_project.modulos_aulas',
     'icsmp_project.modulos_artigos',
+    'icsmp_project.img3d',
     'ordered_model',
 ]
 

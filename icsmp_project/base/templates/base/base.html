@@ -36,11 +36,13 @@
           {% block navbar %}
 
           {% endblock %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url  'img3d:lista_img' %}">Imagens Tomográficas<span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Video Aulas
             </a>
-
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for modulo in MODULOS_AULAS %}
                 <a class="dropdown-item" href="{{ modulo.get_absolute_url }}">{{ modulo.nome }}</a>
@@ -59,9 +61,13 @@
             </div>
           </li>
         </ul>
-      <a class="btn btn-light my-2 float-sm-right" href="admin/">Entrar</a>
+
+
 
       </div>
+      {% block botao %}
+
+      {% endblock %}
    </nav>
 
     {% block body %}{% endblock %}
