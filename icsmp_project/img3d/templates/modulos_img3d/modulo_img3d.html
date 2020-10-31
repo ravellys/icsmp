@@ -9,8 +9,9 @@
               <div class="row">
                 <ol>
                  {% for img in img3d %}
-                     <li><a href="{{ img.arquivo.path }}">
+                     <li><a href="#">
                          {{ img.nome }}
+                         {{ img.arquivo.path }}
                         </a>
                      </li>
                  {% endfor %}
