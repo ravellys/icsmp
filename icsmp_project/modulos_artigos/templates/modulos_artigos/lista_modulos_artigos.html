@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Modulo Aulas{% endblock title %}
+
+{% block body %}
+ <div class="container">
+    <table>
+        <tbody>
+            {% for modulo in modulos_artigos %}
+                <tr>
+                    <td><a href="{{ modulo.get_absolute_url }}"> {{ modulo.nome }} </a></td>
+                    <td>{{ modulo.descricao }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Modulo Aulas{% endblock title %}
+
+{% block body %}
+ <div class="container">
+          <div class="row">
+              <div class="d-block">
+              <h3 class="text-white">{{ artigo.titulo | default:"nothing" }}</h3>
+
+                  <dl class="text-light">
+                     <dt>Autores</dt>
+                     <dd>{{ artigo.autor }}</dd>
+                  </dl>
+                  <dl class="text-light">
+                     <dt>Abstract</dt>
+                     <dd>{{ artigo.abstract }}</dd>
+                  </dl>
+                  <dl class="text-light">
+
+                     <dd>doi:<a href="{{ artigo.link }}"> {{ artigo.link }} </a></dd>
+                  </dl>
+
+
+
+              </div>
+          </div>
+ </div>
+{% endblock %}
