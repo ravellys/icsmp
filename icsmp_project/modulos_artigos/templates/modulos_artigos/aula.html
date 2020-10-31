@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Aulas{% endblock title %}
+
+{% block body %}
+ <div class="container">
+          <div class="row">
+              <div class="col">
+                  <h1 class="text-white">{{ aula.nome | default:"nothing" }}</h1>
+                    <div class="embed-responsive embed-responsive-16by9 m-4 ">
+                        <iframe src="https://www.youtube.com/embed/{{ aula.v_id }}" width="640" height="315" class="embed-responsive-item" frameborder="0" allowfullscreen></iframe>
+                    </div>
+              </div>
+          </div>
+ </div>
+{% endblock %}

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'icsmp_project.base',
     'icsmp_project.aulas',
     'icsmp_project.modulos_aulas',
+    'icsmp_project.modulos_artigos',
     'ordered_model',
 ]
 
@@ -76,6 +77,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'icsmp_project.modulos_aulas.context_processors.listar_modulos_ordenados',
+                'icsmp_project.modulos_aulas.context_processors.listar_modulos_artigos_ordenados',
             ],
         },
     },

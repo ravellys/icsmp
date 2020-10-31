@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Modulo Aulas{% endblock title %}
+
+{% block body %}
+ <div class="container">
+          <div class="col">
+              <div class="row">
+                  <dl class="text-light">
+                     <h3 class="text-white">{{ modulo.nome | default:"nothing" }}</h3>
+                     <dt>Descricao</dt>
+                     <dd>{{ modulo.descricao }}</dd>
+                  </dl>
+              </div>
+              <div class="row">
+                <ol class="text-light">
+                 {% for artigo in modulo.artigo_set.values %}
+                     <li><a href="{% url 'modulos_artigos:lista_modulos' %}artigos/{{ artigo.slug }}">
+                         {{ artigo.titulo }}
+                        </a>
+                     </li>
+                 {% endfor %}
+                </ol>
+              </div>
+          </div>
+ </div>
+{% endblock %}
