@@ -4,7 +4,7 @@ from ordered_model.models import OrderedModel
 
 
 class Img3d(OrderedModel):
-    nome = models.CharField(max_length=32)
+    nome = models.CharField(max_length=32, unique=True)
     descricao = models.TextField(null=True, blank=True)
     trabalhos_utilizados = models.TextField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=True, blank=True)

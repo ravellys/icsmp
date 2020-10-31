@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('order', models.PositiveIntegerField(db_index=True, editable=False, verbose_name='order')),
-                ('nome', models.CharField(max_length=32)),
+                ('nome', models.CharField(max_length=32, unique=True)),
                 ('descricao', models.TextField(blank=True, null=True)),
                 ('trabalhos_utilizados', models.TextField(blank=True, null=True)),
                 ('slug', models.SlugField(blank=True, null=True, unique=True)),
