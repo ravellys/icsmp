@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'icsmp_project.modulos_artigos',
     'icsmp_project.img3d',
     'ordered_model',
+    's3direct',
 ]
 
 MIDDLEWARE = [
@@ -155,6 +156,15 @@ AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 
 # STORAGE CONFIGURATION IN S3 AWS
 # ------------------------------------------------------------------------------
+
+
+def create_filename(filename):
+    import uuid
+    ext = filename.split('.')[-1]
+    filename = '%s.%s' % (uuid.uuid4().hex, ext)
+    return os.path.join('custom', filename)
+
+
 if AWS_ACCESS_KEY_ID:
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
@@ -162,6 +172,9 @@ if AWS_ACCESS_KEY_ID:
     AWS_PRELOAD_METADATA = True
     AWS_AUTO_CREATE_BUCKET = False
     AWS_QUERYSTRING_AUTH = True
+
+    AWS_S3_REGION_NAME = 'sa-east-1'
+    AWS_S3_ENDPOINT_URL = 'https://s3-sa-east-1.amazonaws.com'
 
     COLLECTFAST_ENABLED = True
     COLLECTFAST_STRATEGY = 'collectfast.strategies.boto3.Boto3Strategy'
@@ -186,6 +199,44 @@ if AWS_ACCESS_KEY_ID:
 
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
+
+    S3DIRECT_DESTINATIONS = {
+        # Allow anybody to upload any MIME type
+        'misc': {
+            'key': '/'
+        },
+
+        # Allow staff users to upload any MIME type
+        'pdfs': {
+            'key': 'uploads/pdfs',
+            'auth': lambda u: u.is_staff
+        },
+
+        # Allow anybody to upload jpeg's and png's. Limit sizes to 5kb - 20Gb
+        'images': {
+            'key': 'uploads/images',
+            'auth': lambda u: True,
+            'allowed': [
+                'image/jpeg',
+                'image/png',
+                'application/json',
+            ],
+            'content_length_range': (5000, 20000000000),
+            'allow_existence_optimization': True
+        },
+
+        # Allow authenticated users to upload mp4's
+        'videos': {
+            'key': 'uploads/videos',
+            'auth': lambda u: u.is_authenticated,
+            'allowed': ['video/mp4']
+        },
+
+        # Allow anybody to upload any MIME type with a custom name function
+        'custom_filename': {
+            'key': create_filename
+        },
+    }
 
 SENTRY_DSN = config('SENTRY_DSN', default=None)
 

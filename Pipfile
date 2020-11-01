@@ -22,6 +22,8 @@ django-debug-toolbar = "*"
 sentry-sdk = "*"
 numpy = "*"
 django-ordered-model = "*"
+django-s3direct = "*"
+uuid = "*"
 
 [requires]
 python_version = "3.8"

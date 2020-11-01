@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from ordered_model.models import OrderedModel
+from s3direct.fields import S3DirectField
 
 
 class Img3d(OrderedModel):
@@ -8,14 +9,14 @@ class Img3d(OrderedModel):
     descricao = models.TextField(null=True, blank=True)
     trabalhos_utilizados = models.TextField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=True, blank=True)
-    arquivo = models.FileField()
+    arquivo = S3DirectField(dest='images')
     url = models.CharField(max_length=200, null=True, blank=True)
 
     class Meta(OrderedModel.Meta):
         pass
 
     def save(self, *args, **kwargs):
-        self.url = self.arquivo.url
+        self.url = self.arquivo
         super(Img3d, self).save(*args, **kwargs)
 
     def __str__(self):
