@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}teste{% endblock title %}
+
+{% block body %}
+ <div class="container">
+          <div class="row">
+              <div class="col">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="word">insira url:</label>
+                    <input id="word" type="text" name="url" value="" />
+                    <input type="submit">
+                        {% if url != None %}
+                             <br><br>
+                            link: {{ url }}
+                            <br>
+
+                            <img src="data:image/png;base64,{{ data }}" alt="" height="251" width="251">
+                        {% endif %}
+                </form>
+              </div>
+          </div>
+ </div>
+{% endblock %}

@@ -6,7 +6,7 @@ from ordered_model.models import OrderedModel
 
 
 class ModuloArtigo(OrderedModel):
-    nome = models.CharField(max_length=32)
+    nome = models.CharField(max_length=300)
     descricao = models.TextField()
     slug = models.SlugField(unique=True)
 

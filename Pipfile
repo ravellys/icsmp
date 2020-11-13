@@ -24,6 +24,9 @@ numpy = "*"
 django-ordered-model = "*"
 django-s3direct = "*"
 uuid = "*"
+requests = "*"
+matplotlib = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.8"
