@@ -22,7 +22,7 @@ class ModuloArtigo(OrderedModel):
 
 class Artigo(OrderedModel):
     modulo = models.ForeignKey(ModuloArtigo, on_delete=models.PROTECT)
-    titulo = models.CharField(max_length=32)
+    titulo = models.CharField(max_length=300)
     autor = models.TextField(null=True, blank=True)
     abstract = models.TextField(null=True, blank=True)
     link = models.CharField(max_length=100, null=True, blank=True)
