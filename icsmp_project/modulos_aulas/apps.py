@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ModulosAulasConfig(AppConfig):
-    name = 'modulos_aulas'
+    name = 'icsmp_project.modulos_aulas'

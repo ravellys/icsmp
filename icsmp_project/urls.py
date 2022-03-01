@@ -14,9 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +25,7 @@ urlpatterns = [
     path('modulos_aulas/', include('icsmp_project.modulos_aulas.urls')),
     path('modulos_artigos/', include('icsmp_project.modulos_artigos.urls')),
     path('img3d/', include('icsmp_project.img3d.urls')),
-    url(r'^s3direct/', include('s3direct.urls')),
+    re_path(r'^s3direct/', include('s3direct.urls')),
 ]
 
 if settings.DEBUG:
