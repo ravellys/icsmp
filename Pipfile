@@ -27,6 +27,7 @@ uuid = "*"
 requests = "*"
 matplotlib = "*"
 djangorestframework = "*"
+django-bootstrap-form = "*"
 
 [requires]
 python_version = "3.8"
