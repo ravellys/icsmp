@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Modulo Aulas{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <a href="{% url 'agendamento_laboratorio:criar_agendamento' %}" class="btn btn-light m-4"> Agendar novo horário </a>
+
+        <table class="table table-striped table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Nome do usuário</th>
+                <th scope="col">Data de Uso</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for agendamento in agendamentos %}
+                <tr>
+                    <td>{{ agendamento.nome }} </td>
+                    <td>{{ agendamento.data_solicitacao }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -46,13 +46,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'collectfast',
     'django.contrib.staticfiles',
+
     'icsmp_project.base',
     'icsmp_project.aulas',
     'icsmp_project.modulos_aulas',
     'icsmp_project.modulos_artigos',
     'icsmp_project.img3d',
+    'icsmp_project.agendamento_laboratorio',
+
     'ordered_model',
     's3direct',
+    'bootstrapform'
 ]
 
 MIDDLEWARE = [
