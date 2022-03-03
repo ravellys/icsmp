@@ -28,6 +28,7 @@ requests = "*"
 matplotlib = "*"
 djangorestframework = "*"
 django-bootstrap-form = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.8"
